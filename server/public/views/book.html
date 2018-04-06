@@ -1,1 +1,43 @@
-<div><h2>Books</h2></div>
+
+<div flex>
+    <h2>Enter a book:</h2>
+    <form ng-submit="vm.addBook(vm.bookToAdd)">
+        <md-input-container>
+                <input type="text" placeholder="Title" ng-model="vm.bookToAdd.title">
+                </md-input-container>
+            <md-input-container>
+                <input type="text" placeholder="Author" ng-model="vm.bookToAdd.author">
+            </md-input-container>
+            <br>
+            <md-datepicker ng-model="vm.bookToAdd.date" md-current-view="year" 
+            md-placeholder="Date Published"></md-datepicker>
+            <md-input-container>
+                    <input type="text" placeholder="Image URL" ng-model="vm.bookToAdd.image">
+               </md-input-container>
+               <br>
+            <md-input-container>
+                <label>Select Genre</label>
+                <md-select ng-model="vm.bookToAdd.genre_id" required>
+                        <md-option ng-repeat="genre in vm.genres.list" value="{{genre.id}}">{{genre.name}}</md-option>
+                </md-select>
+            </md-input-container>
+            <input type="submit">
+        </form>
+    <!-- </md-content> -->
+
+</div>
+
+
+<div>
+    <md-card class="novelCard" ng-repeat="book in vm.books.list">
+         <div ng-click="vm.editBook(book, $event)">
+            <div ng-hide="true">{{book.title}}</div>
+            <div ng-hide="true">{{book.author}}</div>
+            <div ng-hide="true">Published in {{book.date.substring(0, 4)}}</div>
+            <span ng-hide="true">{{book.favorite}}</span>
+            <span ng-hide="true">{{book.score}}</span>
+            <div class="imageDiv"><img style="height:280px" ng-src="{{book.image}}"></div>
+
+         </div>
+    </md-card>
+</div>

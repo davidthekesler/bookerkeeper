@@ -3,14 +3,16 @@ app.controller('GenreController', ['BookAndGenreService', '$mdDialog', '$mdToast
     const self = this;
 
  
+    self.books = BookAndGenreService.books;
+    self.genres = BookAndGenreService.genres;
+    self.getGenres = BookAndGenreService.getGenres;
+    self.getBooks = BookAndGenreService.getBooks;
+    self.genreToAdd = BookAndGenreService.genreToAdd;
+    self.addGenre = BookAndGenreService.addGenre;
+    self.deleteGenre = BookAndGenreService.deleteGenre;
+    self.showBooks = BookAndGenreService.showBooks;
 
-    function showToast(inputString) {
-        $mdToast.show(
-            $mdToast.simple()
-              .textContent(inputString)
-            //   .position(pinTo )
-              .hideDelay(3000)
-          );
-    };
+    self.getGenres();
+    self.getBooks();
 
-}]);//end BookController
+}]);//end GenreController

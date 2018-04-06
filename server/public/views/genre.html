@@ -1,1 +1,23 @@
-<div><h2>Genres</h2></div>
+<div flex>
+        <h2>Enter a genre:</h2>
+        <form ng-submit="vm.addGenre(vm.genreToAdd)">
+            <md-input-container>
+                    <input type="text" placeholder="Title" ng-model="vm.genreToAdd.title">
+                </md-input-container>
+                <input type="submit">
+            </form>
+    
+    </div>
+
+<div>
+        <md-card ng-repeat="genre in vm.genres.list" class="(genre.count === '0') ? 'genreCardEmpty' : 'genreCardFull'" ng-sort="genre.count">
+            <div layout="row">
+                <div flex="30" layout-align="left">{{genre.name}}</div>
+                <div flex="30" layout-align="center">
+                        <md-button ng-show="(genre.count === '0')" ng-click="vm.deleteGenre(genre.id)">Delete</md-button>
+                        <md-button ng-hide="(genre.count === '0')" ng-click="vm.showBooks(genre.id)">See Books</md-button>
+                </div>
+
+            </div>
+        </md-card>
+    </div>

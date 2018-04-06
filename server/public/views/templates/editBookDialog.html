@@ -1,0 +1,25 @@
+<div ng-controller="EditBookDialogController as vm">
+    <form>
+        <md-input-container>
+            <input type="text" placeholder="Title" ng-model="vm.bookToEdit.title">
+        </md-input-container>
+        <md-input-container>
+            <input type="text" placeholder="Author" ng-model="vm.bookToEdit.author">
+        </md-input-container>
+        <br>
+        <md-datepicker ng-model="vm.bookToEdit.date" md-current-view="year" md-placeholder="{{vm.bookSelected.date.slice(0,4)}}"></md-datepicker>
+        <div class="imageDiv">
+            <img style="width:150px" ng-src="{{vm.bookSelected.image}}">
+        </div>
+        <br>
+        <md-input-container>
+            <label>Edit Genre</label>
+            <md-select ng-model="vm.bookToEdit.genre_id" required>
+                <md-option ng-repeat="genre in vm.genres.list" value="{{genre.id}}">{{genre.name}}</md-option>
+            </md-select>
+        </md-input-container>
+        <md-button ng-click="vm.putBook(vm.bookToEdit)">Update</md-button>
+        <md-button ng-click="vm.deleteBook(vm.bookSelected.id, $event)">Delete</md-button>
+        <md-button ng-click="vm.favorBook(vm.bookSelected)">Make Favorite</md-button>
+    </form>
+</div>

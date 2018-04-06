@@ -1,0 +1,5 @@
+<div ng-controller="ShowBookDialogController as vm">
+    <div ng-repeat="book in vm.books.list" ng-show="(book.genre_id === vm.genreSelected)" ng-click="vm.editBook(book, $event)">
+        <img style="height:100px" ng-src="{{book.image}}">
+    </div>
+</div>

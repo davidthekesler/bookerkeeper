@@ -12,6 +12,20 @@ router.get('/', (req, res) => {
     });
   });//end router.get
 
+  router.post('/', (req, res) => {
+    console.log('POST /genre', req.body);
+    const genre = req.body;
+    const queryText = `INSERT INTO "genre" ("name") VALUES ($1)`;
+    pool.query(queryText, [genre.name])
+        .then(result => {
+            res.sendStatus(201);
+        })
+        .catch(error => {
+            console.log('error making book insert query', error);
+            res.sendStatus(500);
+        });
+    });//end router.post
+
   router.delete('/:id', (req, res) => {
     //deletes a genre from the table
     let genreId = req.params.id;

@@ -5,6 +5,7 @@ app.service('BookAndGenreService', ['$http', '$mdToast', '$mdDialog', function($
     self.books = {list: []};
     self.genres = {list: []};
     self.bookToAdd = {};
+    self.genreToAdd = {};
     self.bookSelected = {};
     self.bookToEdit = {};
     self.genreSelected;
@@ -57,6 +58,30 @@ self.genres.list = response.data;
             });
     }   //end addBook
 
+    self.addGenre = function (genreInput) {
+        let genreToSend = genreInput;
+        $http({
+            method: 'POST',
+            url: '/genre',
+            data: genreToSend
+        }).then((response) => {
+            $mdToast.show(
+                $mdToast.simple()
+                  .textContent(`Success adding Genre!`)
+                  .hideDelay(3000)
+              );
+            self.getGenres();
+            self.genreToAdd = {};
+        }).catch((error) => {
+            console.log('error making genre POST request', error);
+            $mdToast.show(
+                $mdToast.simple()
+                  .textContent(`Something went wrong! Check the server!`)
+                  .hideDelay(3000)
+              );
+        });
+}   //end addGenre
+
     self.editBook = function (bookSelected, ev) {
         console.log('called editBook');
         console.log(bookSelected);
@@ -81,6 +106,7 @@ self.genres.list = response.data;
             data: bookToSend
         }).then((response) => {
             self.getBooks();
+            self.getGenres();
         })
         .catch((error) => {
             console.log('error making request', error);

@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
             res.sendStatus(201);
         })
         .catch(error => {
-            console.log('error making ship insert query', error);
+            console.log('error making book insert query', error);
             res.sendStatus(500);
         });
     });//end router.post

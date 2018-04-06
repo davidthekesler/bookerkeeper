@@ -23,13 +23,11 @@
             </md-input-container>
             <input type="submit">
         </form>
-    <!-- </md-content> -->
 
 </div>
 
-
 <div>
-    <md-card class="novelCard" ng-repeat="book in vm.books.list">
+    <md-card class="novelCard" ng-repeat="book in vm.books.list | orderBy:'-score'">
          <div ng-click="vm.editBook(book, $event)">
             <div ng-hide="true">{{book.title}}</div>
             <div ng-hide="true">{{book.author}}</div>
@@ -37,7 +35,12 @@
             <span ng-hide="true">{{book.favorite}}</span>
             <span ng-hide="true">{{book.score}}</span>
             <div class="imageDiv"><img style="height:280px" ng-src="{{book.image}}"></div>
+        </div>
+        <div>
+            <i class="material-icons md-48" ng-click="vm.rateBook(book, 1)">thumb_up</i>
+            <i class="material-icons md-48" ng-click="vm.favorBook(book)">star</i>
+            <i class="material-icons md-48" ng-click="vm.rateBook(book, 1)">thumb_down</i>
+        </div>
 
-         </div>
     </md-card>
 </div>

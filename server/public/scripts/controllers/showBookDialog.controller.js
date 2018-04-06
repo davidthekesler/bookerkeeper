@@ -14,6 +14,7 @@ app.controller('ShowBookDialogController', ['BookAndGenreService', '$mdDialog', 
     self.genreSelected = BookAndGenreService.genreSelected;
     self.getBooks = BookAndGenreService.getBooks;
     self.getGenres = BookAndGenreService.getGenres;
+    self.editBook = BookAndGenreService.editBook;
 
     self.getGenres();
     self.getBooks();

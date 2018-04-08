@@ -49,6 +49,7 @@ app.service('BookAndGenreService', ['$http', '$mdToast', '$mdDialog', function (
         let bookToSend = bookInput;
         bookToSend.score = 5;
         bookToSend.favorite = false;
+        closeDialog();
         $http({
             method: 'POST',
             url: '/book',
@@ -204,7 +205,6 @@ app.service('BookAndGenreService', ['$http', '$mdToast', '$mdDialog', function (
         console.log('called rateBook');
         let bookToSend = bookToRate;
         bookToSend.score = bookToSend.score + ratingNumber;
-        closeDialog();
         $http({
             method: 'PUT',
             url: `/book/rate/${bookToSend.id}`,

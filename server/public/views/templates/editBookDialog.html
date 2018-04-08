@@ -8,7 +8,7 @@
         </md-input-container>
         <br>
         <md-datepicker ng-model="vm.bookToEdit.date" md-current-view="year" md-placeholder="{{vm.bookSelected.date.slice(0,4)}}"></md-datepicker>
-        <md-card flex class="novelCardSmall md-whiteframe-10dp">
+        <md-card flex ng-class="vm.bookToEdit.favorite ? 'novelCardSmallFavorite md-whiteframe-10dp' : 'novelCardSmall md-whiteframe-10dp'">
             <div class="imageDiv">
                 <img style="width:100px" ng-src="{{vm.bookSelected.image}}">
             </div>
@@ -17,7 +17,7 @@
         <md-input-container>
             <label>Edit Genre</label>
             <md-select ng-model="vm.bookToEdit.genre_id" required>
-                <md-option ng-repeat="genre in vm.genres.list" value="{{genre.id}}">{{genre.name}}</md-option>
+                <md-option ng-repeat="genre in vm.genres.list | orderBy:'name'" value="{{genre.id}}">{{genre.name}}</md-option>
             </md-select>
         </md-input-container>
         <md-button class="md-raised" ng-click="vm.putBook(vm.bookToEdit)">Update</md-button>

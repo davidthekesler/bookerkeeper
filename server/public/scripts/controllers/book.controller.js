@@ -15,6 +15,7 @@ app.controller('BookController', ['BookAndGenreService', '$mdDialog', function (
     self.rateBook = BookAndGenreService.rateBook;
     self.favorBook = BookAndGenreService.favorBook;
     
+    self.filterString = '';
 
     self.getBooks();
     self.getGenres();

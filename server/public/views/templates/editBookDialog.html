@@ -8,9 +8,11 @@
         </md-input-container>
         <br>
         <md-datepicker ng-model="vm.bookToEdit.date" md-current-view="year" md-placeholder="{{vm.bookSelected.date.slice(0,4)}}"></md-datepicker>
-        <div class="imageDiv">
-            <img style="width:150px" ng-src="{{vm.bookSelected.image}}">
-        </div>
+        <md-card flex class="novelCardSmall md-whiteframe-10dp">
+            <div class="imageDiv">
+                <img style="width:100px" ng-src="{{vm.bookSelected.image}}">
+            </div>
+        </md-card>
         <br>
         <md-input-container>
             <label>Edit Genre</label>

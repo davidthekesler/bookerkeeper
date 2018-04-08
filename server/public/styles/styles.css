@@ -1,7 +1,7 @@
 
 .header {
     position: relative; 
-    background-color: #8aacc8;
+    background-color: 'grey';
     height: auto;
     width: 100%;
 }
@@ -46,12 +46,43 @@ a:active {
     font-size: 36px; 
 }
 
+.material-icons.md-20 { 
+    font-size: 20px; 
+}
+
 .novelCard {
     height: 340px;
     width: 230px;
     float: left;
     padding: 10px;
+    background-color: #90a4ae;
     margin: 20px;
+}
+
+.novelCardFavorite {
+    height: 340px;
+    width: 230px;
+    float: left;
+    padding: 10px;
+    background-color: #ce6161;
+    margin: 20px;
+}
+
+.novelCardSmall {
+    height: 180px;
+    width: 120px;
+    float: left;
+    padding: 10px;
+    margin: 20px;
+}
+
+.novelCardSmallFavorite {
+    height: 180px;
+    width: 120px;
+    float: left;
+    padding: 10px;
+    margin: 20px;
+    background-color: #ce6161;
 }
 
 .imageDiv {
@@ -64,3 +95,11 @@ a:active {
     align-items: center;
     justify-content: center;
 }
+
+.searchField {
+    position: absolute;
+    right: 10px;
+}
+
+
+

@@ -1,5 +1,16 @@
 <div ng-controller="ShowBookDialogController as vm">
-    <md-div ng-repeat="book in vm.books.list" ng-show="(book.genre_id === vm.genreSelected)" ng-click="vm.editBook(book, $event)">
-        <img style="height:100px" ng-src="{{book.image}}">
-    </md-div>
-</div>
+    <div class="bookRepeater">
+        <md-card flex class="novelCardSmall md-whiteframe-10dp" ng-repeat="book in vm.books.list | orderBy:'-score'" ng-show="(book.genre_id === vm.genreSelected)">
+            <div ng-click="vm.editBook(book, $event)">
+                <div class="imageDiv">
+                    <img style="height:100px" ng-src="{{book.image}}">
+                </div>
+            </div>
+            <div>
+                <i class="material-icons md-20" ng-click="vm.rateBook(book, 1, $event)">thumb_up</i>
+                <i class="material-icons md-20" ng-click="vm.favorBook(book, $event)">star</i>
+                <i class="material-icons md-20" ng-click="vm.rateBook(book, -1, $event)">thumb_down</i>
+                <i class="material-icons md-20" ng-click="vm.deleteBook(book.id, $event)">delete</i>
+            </div>
+        </md-card>
+    </div>

@@ -10,7 +10,7 @@
 --[X] DELETE route for Genres.
 --[X] PUT routes for favoring and scoring Books.
 --[X] Minimal Styling Done
---[X] 
+--[X] Search filter to both pages.
 
 ```SQL 
 CREATE TABLE "genre" (

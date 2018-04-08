@@ -13,6 +13,8 @@ app.controller('GenreController', ['BookAndGenreService', '$mdDialog', '$mdToast
     self.deleteGenre = BookAndGenreService.deleteGenre;
     self.showBooks = BookAndGenreService.showBooks;
 
+    self.filterString = '';
+
     self.getGenres();
     self.getBooks();
 

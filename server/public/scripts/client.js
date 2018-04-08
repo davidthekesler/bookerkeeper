@@ -1,7 +1,13 @@
 var app = angular.module('BookerKeeperApp', ['ngRoute', 'ngMaterial']);
 
-app.config(['$routeProvider', function ($routeProvider) {
+
+app.config(['$routeProvider', '$mdThemingProvider', function ($routeProvider, $mdThemingProvider) {
     console.log('Route config loaded');
+
+    $mdThemingProvider.theme('default')
+        .primaryPalette('grey')
+        .accentPalette('blue-grey')
+        .dark();
 
     $routeProvider
         .when('/', {
@@ -15,5 +21,6 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'views/genre.html',
             controller: 'GenreController as vm'
         })
-        .otherwise( { template: '<h1>404</h1>' });
+        .otherwise({ template: '<h1>404</h1>' });
 }]);
+

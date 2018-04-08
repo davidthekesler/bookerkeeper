@@ -1,0 +1,12 @@
+<div ng-controller="AddGenreDialogController as vm">
+    <div>
+        <form>
+            <md-input-container>
+                    <input type="text" placeholder="Title" ng-model="vm.genreToAdd.name">
+                </md-input-container>
+            <md-input-container>
+                <md-button class="md-raised" ng-click="vm.addGenre(vm.genreToAdd)">Submit</md-button>
+            </md-input-container>
+        </form>
+    </div>
+</div>

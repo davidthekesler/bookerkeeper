@@ -18,8 +18,7 @@
                 <md-option ng-repeat="genre in vm.genres.list" value="{{genre.id}}">{{genre.name}}</md-option>
             </md-select>
         </md-input-container>
-        <md-button ng-click="vm.putBook(vm.bookToEdit)">Update</md-button>
-        <md-button ng-click="vm.deleteBook(vm.bookSelected.id, $event)">Delete</md-button>
-        <md-button ng-click="vm.favorBook(vm.bookSelected)">Make Favorite</md-button>
+        <md-button class="md-raised" ng-click="vm.putBook(vm.bookToEdit)">Update</md-button>
+        <!-- <md-button class="md-raised md-warn" ng-click="vm.deleteBook(vm.bookSelected.id, $event)">Delete</md-button> -->
     </form>
 </div>

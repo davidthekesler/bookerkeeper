@@ -8,6 +8,9 @@
 --[X] Establish Genre GET route that uses COUNT and JOIN to populate Genre.html
 --[X] DELETE and PUT routes for Books.
 --[X] DELETE route for Genres.
+--[X] PUT routes for favoring and scoring Books.
+--[X] Minimal Styling Done
+--[X] 
 
 ```SQL 
 CREATE TABLE "genre" (

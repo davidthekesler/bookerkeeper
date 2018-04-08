@@ -42,6 +42,38 @@ router.get('/', (req, res) => {
             });
         });//end router.put
 
+        router.put('/rate/:id', (req, res) => {
+            console.log('PUT /book/rate', req.body);
+            const id = req.params.id;
+            const book = req.body;
+            const queryText = `UPDATE "book" SET "author" = $1, "title" = $2, "date" = $3, "image" = $4, "genre_id" = $5, "score" = $6, "favorite" = $7 WHERE "id" = $8;
+    `;
+            pool.query(queryText, [book.author, book.title, book.date, book.image, book.genre_id, book.score, book.favorite, id])
+                .then(result => {
+                    res.sendStatus(201);
+                })
+                .catch(error => {
+                    console.log('error making book put rate query', error);
+                    res.sendStatus(500);
+                });
+            });//end router.put /rate
+
+            router.put('/favor/:id', (req, res) => {
+                console.log('PUT /book/ favor', req.body);
+                const id = req.params.id;
+                const book = req.body;
+                const queryText = `UPDATE "book" SET "author" = $1, "title" = $2, "date" = $3, "image" = $4, "genre_id" = $5, "score" = $6, "favorite" = $7 WHERE "id" = $8;
+        `;
+                pool.query(queryText, [book.author, book.title, book.date, book.image, book.genre_id, book.score, book.favorite, id])
+                    .then(result => {
+                        res.sendStatus(201);
+                    })
+                    .catch(error => {
+                        console.log('error making book put rate query', error);
+                        res.sendStatus(500);
+                    });
+                });//end router.put /favor
+
         router.delete('/:id', (req, res) => {
             //deletes a book from the table
             let bookId = req.params.id;

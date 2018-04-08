@@ -1,11 +1,8 @@
+<br>
 <div flex>
-        <h2>Enter a genre:</h2>
-        <form ng-submit="vm.addGenre(vm.genreToAdd)">
-            <md-input-container>
-                    <input type="text" placeholder="Title" ng-model="vm.genreToAdd.name">
-                </md-input-container>
-                <input type="submit">
-            </form>
+    <div class="inputsDiv">
+            <md-button class="md-raised" ng-click="vm.newGenre($event)">Add Genre</md-button>
+    </div>
     
     </div>
 

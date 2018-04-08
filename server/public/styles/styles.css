@@ -1,28 +1,66 @@
+
+.header {
+    position: relative; 
+    background-color: #8aacc8;
+    height: auto;
+    width: 100%;
+}
+
+
+#titleDiv {
+    padding: 5px;
+    position: relative;
+    font-size: 3em;
+    text-align: center;
+}
+
+.nav {
+    height: 70px;
+}
+
+#navItemBook {
+    text-align: right;
+}
+
+#navItemGenre {
+    text-align: left;
+}
+
+a:link {
+    color:rgb(158, 158, 158);
+}
+
+a:visited {
+    color:rgb(158, 158, 158);
+}
+
+a:hover {
+    color:rgb(158, 158, 158);
+}
+
+a:active {
+    color:rgb(158, 158, 158);
+}
+
+.material-icons.md-36 { 
+    font-size: 36px; 
+}
+
 .novelCard {
-    height: 450px;
-    width: 300px;
+    height: 340px;
+    width: 230px;
     float: left;
+    padding: 10px;
+    margin: 20px;
 }
 
 .imageDiv {
     border: none;
     display: block;
     margin: 0 auto;
-    
 }
 
-.genreCardEmpty {
-    height: 25px;
-    width: 300px;
-    float: left;
-}
-
-.genreCardFull {
-    height: 450px;
-    width: 300px;
-    float: left;
-}
-
-.material-icons.md-48 { 
-    font-size: 48px; 
+.bookRepeater {
+    align-items: center;
+    justify-content: center;
 }

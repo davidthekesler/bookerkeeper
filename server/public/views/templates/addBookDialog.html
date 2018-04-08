@@ -1,0 +1,26 @@
+<div ng-controller="AddBookDialogController as vm">
+    <div>
+        <form>
+            <md-input-container>
+                <input type="text" placeholder="Title" ng-model="vm.bookToAdd.title">
+            </md-input-container>
+            <md-input-container>
+                <input type="text" placeholder="Author" ng-model="vm.bookToAdd.author">
+            </md-input-container>
+            <md-input-container>
+                <md-datepicker ng-model="vm.bookToAdd.date" md-current-view="year" md-placeholder="Date Published"></md-datepicker>
+            </md-input-container>
+            <md-input-container>
+                <input type="text" placeholder="Image URL" ng-model="vm.bookToAdd.image">
+            </md-input-container>
+            <md-input-container>
+                <md-select placeholder="Select Genre" ng-model="vm.bookToAdd.genre_id" required>
+                    <md-option ng-repeat="genre in vm.genres.list" value="{{genre.id}}">{{genre.name}}</md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container>
+                <md-button class="md-raised" ng-click="vm.addBook(vm.bookToAdd)">Submit</md-button>
+            </md-input-container>
+        </form>
+    </div>
+</div>

@@ -1,10 +1,18 @@
-<div class="nav">
-    <ul>
-        <li>
-            <a ng-href="#!/book">Books</a>
-        </li>
-        <li>
-            <a ng-href="#!/genre">Genres</a>
-        </li>
-    </ul>
+<div class="header">
+    <div id="titleDiv">
+        <p>BOOKER
+            <img height="60px" src="assets/Iconsmind-Outline-Books-2.ico"> KEEPER</p>
+    </div>
+
+    <div class="nav" ng-cloak>
+        <md-content layout-gt-sm="row" layout-padding>
+            <md-toolbar class="md-whiteframe-10dp">
+                <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+                    <md-nav-item id="navItemBook" flex="50" text-align="right" layout-align="left" layout-xs-align="top" md-nav-href="#!/book"
+                        name="book">Book Library</md-nav-item>
+                    <md-nav-item id="navItemGenre" flex="50" layout-align="right" layout-xs-align="bottom" md-nav-href="#!/genre" name="genre">Manage Genres</md-nav-item>
+                </md-nav-bar>
+            </md-toolbar>
+        </md-content>
+    </div>
 </div>

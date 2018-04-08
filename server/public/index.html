@@ -1,41 +1,44 @@
 <DOCTYPE html>
-<html lang="en">
-    
+    <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Booker Keeper</title>
         <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="styles/angular-material.css">
         <link rel="stylesheet" href="styles/styles.css">
-    
+
         <script src="vendors/angular.min.js"></script>
         <script src="vendors/angular-animate.min.js"></script>
         <script src="vendors/angular-aria.min.js"></script>
         <script src="vendors/angular-messages.min.js"></script>
         <script src="vendors/angular-material.min.js"></script>
         <script src="/vendors/angular-route.js"></script>
-    
+
         <script src="/scripts/client.js"></script>
-    
+
         <script src="/scripts/services/bookAndGenreService.service.js"></script>
-    
+
         <script src="/scripts/controllers/book.controller.js"></script>
         <script src="/scripts/controllers/genre.controller.js"></script>
         <script src="/scripts/controllers/editBookDialog.controller.js"></script>
         <script src="/scripts/controllers/showBookDialog.controller.js"></script>
+        <script src="/scripts/controllers/addBookDialog.controller.js"></script>
+        <script src="/scripts/controllers/addGenreDialog.controller.js"></script>
     </head>
-    
+
     <body ng-app="BookerKeeperApp">
-        <h1>Booker Keeper</h1>
-            <div>
-            <div ng-include=" '/views/templates/nav.html' "></div>
-            <main ng-view>
-             <!-- HTML GOES HERE -->
-            </main> 
-         </div>
-     </body>
-</html>
+        <div ng-include=" '/views/templates/nav.html' "></div>
+        <main ng-view>
+            <!-- HTML GOES HERE -->
+        </main>
+        </div>
+        <footer>
+            <div id="footerDiv"></div>
+        </footer>
+    </body>
+
+    </html>

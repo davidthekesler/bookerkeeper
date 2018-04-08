@@ -5,6 +5,7 @@ app.controller('GenreController', ['BookAndGenreService', '$mdDialog', '$mdToast
  
     self.books = BookAndGenreService.books;
     self.genres = BookAndGenreService.genres;
+    self.newGenre = BookAndGenreService.newGenre;
     self.getGenres = BookAndGenreService.getGenres;
     self.addGenre = BookAndGenreService.addGenre;
     self.getBooks = BookAndGenreService.getBooks;

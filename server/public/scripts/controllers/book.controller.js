@@ -1,5 +1,6 @@
 app.controller('BookController', ['BookAndGenreService', '$mdDialog', function (BookAndGenreService, $mdDialog) {
     console.log('BookController has been loaded');
+
     const self = this;
 
     self.books = BookAndGenreService.books;
@@ -8,21 +9,14 @@ app.controller('BookController', ['BookAndGenreService', '$mdDialog', function (
     self.getGenres = BookAndGenreService.getGenres;
     self.bookToAdd = BookAndGenreService.bookToAdd;
     self.addBook = BookAndGenreService.addBook;
+    self.newBook = BookAndGenreService.newBook;
     self.editBook = BookAndGenreService.editBook;
     self.deleteBook = BookAndGenreService.deleteBook;
+    self.rateBook = BookAndGenreService.rateBook;
+    self.favorBook = BookAndGenreService.favorBook;
+    
 
     self.getBooks();
     self.getGenres();
-
- 
-
-    // function showToast(inputString) {
-    //     $mdToast.show(
-    //         $mdToast.simple()
-    //           .textContent(inputString)
-    //         //   .position(pinTo )
-    //           .hideDelay(3000)
-    //       );
-    // };
 
 }]);//end BookController

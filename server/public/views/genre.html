@@ -1,24 +1,25 @@
 <br>
 <div flex>
     <div class="inputsDiv">
-            <md-button class="md-raised" ng-click="vm.newGenre($event)">Add Genre</md-button>
-    <md-input-container class="searchField">
+        <md-button class="md-raised" ng-click="vm.newGenre($event)">Add Genre</md-button>
+        <md-input-container class="searchField">
             <input type="text" placeholder="Search Genres" ng-model="vm.filterString">
-    </md-input-container>
-    
+        </md-input-container>
+
     </div>
-    
-    </div>
+
+</div>
 
 <div>
-        <md-card ng-repeat="genre in vm.genres.list | orderBy:'name' | filter: vm.filterString" class="(genre.count === '0') ? 'genreCardEmpty' : 'genreCardFull'" ng-sort="genre.count">
-            <div layout="row">
-                <div flex="30" layout-align="left">{{genre.name}}</div>
-                <div flex="30" layout-align="center">
-                        <md-button ng-show="(genre.count === '0')" ng-click="vm.deleteGenre(genre.id)">Delete</md-button>
-                        <md-button ng-hide="(genre.count === '0')" ng-click="vm.showBooks(genre.id)">See Books</md-button>
-                </div>
-
+    <md-card ng-repeat="genre in vm.genres.list | orderBy:'name' | filter: vm.filterString" class="(genre.count === '0') ? 'genreCardEmpty' : 'genreCardFull'"
+        ng-sort="genre.count">
+        <div layout="row">
+            <div flex="30" layout-align="left">{{genre.name}}</div>
+            <div flex="30" layout-align="center">
+                <md-button ng-show="(genre.count === '0')" ng-click="vm.deleteGenre(genre.id)">Delete</md-button>
+                <md-button ng-hide="(genre.count === '0')" ng-click="vm.showBooks(genre.id)">See Books</md-button>
             </div>
-        </md-card>
-    </div>
+
+        </div>
+    </md-card>
+</div>

@@ -3,20 +3,22 @@
     <div flex class="inputsDiv">
         <md-button class="md-raised" ng-click="vm.newBook($event)">Add Book</md-button>
         <md-input-container class="searchField">
-                <input type="text" placeholder="Search Books" ng-model="vm.filterString">
-            </md-input-container>
+            <input type="text" placeholder="Search Books" ng-model="vm.filterString">
+        </md-input-container>
     </div>
     <div class="bookRepeater">
-        <md-card flex class="novelCard md-whiteframe-10dp" ng-repeat="book in vm.books.list | orderBy:'-score' | filter : vm.filterString">
+        <md-card flex ng-repeat="book in vm.books.list | orderBy:'-score' | filter : vm.filterString" ng-class="book.favorite ? 'novelCardFavorite md-whiteframe-10dp' : 'novelCard md-whiteframe-10dp'">
             <div ng-click="vm.editBook(book, $event)">
                 <div class="imageDiv">
                     <img style="height:280px" ng-src="{{book.image}}">
                 </div>
             </div>
-            <div>
+            <div layout="row">
                 <i class="material-icons md-36" ng-click="vm.rateBook(book, 1, $event)">thumb_up</i>
-                <i class="material-icons md-36" ng-click="vm.favorBook(book, $event)">star</i>
+                <div style="text-align: center;">Rating:
+                    <br>{{book.score}}</div>
                 <i class="material-icons md-36" ng-click="vm.rateBook(book, -1, $event)">thumb_down</i>
+                <i class="material-icons md-36" ng-click="vm.favorBook(book, $event)">star</i>
                 <i class="material-icons md-36" ng-click="vm.deleteBook(book.id, $event)">delete</i>
             </div>
         </md-card>

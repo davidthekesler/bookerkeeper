@@ -1,9 +1,9 @@
 <div ng-controller="ShowBookDialogController as vm">
     <div class="bookRepeater">
-        <md-card flex class="novelCardSmall md-whiteframe-10dp" ng-repeat="book in vm.books.list | orderBy:'-score'" ng-show="(book.genre_id === vm.genreSelected)">
+        <md-card flex ng-repeat="book in vm.books.list | orderBy:'-score'" ng-show="(book.genre_id === vm.genreSelected)" ng-class="book.favorite ? 'novelCardSmallFavorite md-whiteframe-10dp' : 'novelCardSmall md-whiteframe-10dp'">
             <div ng-click="vm.editBook(book, $event)">
                 <div class="imageDiv">
-                    <img style="height:100px" ng-src="{{book.image}}">
+                    <img style="height:130px" ng-src="{{book.image}}">
                 </div>
             </div>
             <div>

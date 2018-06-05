@@ -1,17 +1,5 @@
 # bookerkeeper
 
---[X] Create server, serve static files.
---[X] Create SQL Table and Insert Placeholder Data, see Below
---[X] Set up controllers and service and establish book GET route.
---[X] Move book GET to router
---[X] Establish book POST route
---[X] Establish Genre GET route that uses COUNT and JOIN to populate Genre.html
---[X] DELETE and PUT routes for Books.
---[X] DELETE route for Genres.
---[X] PUT routes for favoring and scoring Books.
---[X] Minimal Styling Done
---[X] Search filter to both pages.
-
 ```SQL 
 CREATE TABLE "genre" (
   "id" serial primary key,
